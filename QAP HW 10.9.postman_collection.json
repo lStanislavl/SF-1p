@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "6cf4dddd-00e9-4d9e-8874-f8a935de18b4",
+		"name": "QAP Задание 10.9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17335999"
+	},
+	"item": [
+		{
+			"name": "Filter Tea",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"category\": 4,\r\n\"search\": null,\r\n\"sort\": \"popularity\",\r\n\"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter A-Z",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": null,\r\n  \"search\": null,\r\n  \"sort\": \"name\",\r\n  \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Z-A",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": null,\r\n  \"search\": null,\r\n  \"sort\": \"-name\",\r\n  \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter min Price",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": null,\r\n  \"search\": null,\r\n  \"sort\": \"price\",\r\n  \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter max Price",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": null,\r\n  \"search\": null,\r\n  \"sort\": \"-price\",\r\n  \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter  Availability",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Session cookie exist\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"Session\")).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"category\": null,\r\n  \"search\": null,\r\n  \"sort\": \"amount\",\r\n  \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Catalog}}",
+					"host": [
+						"{{Catalog}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Catalog",
+			"value": "https://qa.skillfactory.ru/api/catalog/filter/",
+			"type": "default"
+		}
+	]
+}
